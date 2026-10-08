@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import creditsJson from '@/content/credits.json';
 import { projects, site } from '@/content/site';
-import Footer from '@/components/sections/Footer';
+import Footer from '@/components/v1/Footer';
 import Reveal from '@/components/ui/Reveal';
 
 type CreditItem = {

@@ -206,31 +206,41 @@ So a fresh clone looks intentional rather than broken, and a missing file in pro
 degrades to the studio mark instead of a torn-image icon. Covered: shoot cards, case-study
 covers, galleries and the lightbox, team portraits, hero collage tiles and video posters.
 
-## 6. Layouts & the brand playground
+## 6. Four versions & the brand playground
 
-### Four home layouts, four case-study layouts
+### A version is a whole site, not a theme
+The template ships as four complete versions. Each one has its own home page, its own
+case-study page and **its own copy of every section** — nav, hero, work, stats, services,
+process, packages, team, awards, reviews, FAQ, journal, contact, footer. Nothing is a
+restyled shared component, so the four read as four different studios.
 
-| Home | What it is |
-|---|---|
-| `collage` *(default)* | Drifting contact-sheet hero, pinned horizontal work rail |
-| `editorial` | No hero image. Centred type; work is an index whose cover follows your cursor |
-| `cinematic` | Showreel hero, then every shoot as a full-height snap panel |
-| `grid` | No hero at all — opens into a filterable archive with a sticky side rail |
+The version lives in the URL, so every layout is linkable, crawlable and statically
+rendered. The dropdown in the header (and in every footer) switches between them.
 
-| Case study | What it is |
-|---|---|
-| `editorial` *(default)* | Full-bleed parallax hero, sticky deliverables rail, numbered sections |
-| `split` | Pinned info column, one long stream of frames scrolling past it |
-| `index` | Printed-essay measure interrupted by edge-to-edge frames, facts set as a colophon |
-| `reel` | The gallery is a horizontal spine you drive with the wheel, story panels between groups |
+| URL | Version | Home | Case study |
+|---|---|---|---|
+| `/` | 1 — Collage | Contact-sheet hero, pinned horizontal work rail, cards and counters | Full-bleed parallax hero, sticky deliverables rail, numbered sections |
+| `/home-2` | 2 — Editorial | Masthead, type-only hero, every section a ruled list or grid | Printed-essay measure interrupted by edge-to-edge frames, facts as a colophon |
+| `/home-3` | 3 — Cinematic | Showreel hero, a full-height panel per shoot, horizontal strips, booking over footage | **Filmstrip** — frames scroll vertically while a pinned caption column swaps with them |
+| `/home-4` | 4 — Archive | No hero: pinned index rail and a filterable masonry archive in one hairline grid | Pinned record column, every frame streaming past it |
 
-Pick the shipping defaults in `site.layouts`. `HomeRouter` / `CaseRouter` keep the default
-in the main bundle and code-split the other three, so a visitor downloads only the layout
-they are looking at.
+Case studies stay inside the version you are browsing: links from Home 3 point at
+`/work/<slug>?v=3`, and the bare `/work/<slug>` is version 1. `lib/version.ts` owns that
+mapping (`homeHref`, `workHref`, `parseVersion`) — components never guess, each version
+folder passes its own number.
+
+The old `reel` case study is gone. It translated the wheel into horizontal scroll, which
+fought the visitor for the page; `components/v3/Case.tsx` replaces it with the filmstrip.
+
+Shared across versions: the content in `content/site.ts`, the case-study helpers in
+`components/work/`, the primitives in `components/ui/`, the hero backdrops in
+`components/backdrop/`, and the enquiry logic in `lib/useEnquiry.ts` — so all four
+contact forms deliver the same way while looking nothing alike.
 
 ### The brand playground
 A floating ⚙ opens a panel where a visitor can set the studio name, accent, background,
-logo (four built-in marks or their own upload) and both layouts. Changes are live: the
+logo (four built-in marks or their own upload). Layouts are not in the panel — they are
+URLs, switched from the header dropdown. Changes are live: the
 design tokens are CSS custom properties, so writing `--color-accent` on `:root` repaints
 buttons, headlines, active chips, the logo mark and the progress bars at once.
 
@@ -331,24 +341,24 @@ official APIs above.
 ```
 app/
   layout.tsx              fonts, metadata, smooth scroll
-  page.tsx                home: all sections in order
-  work/[slug]/page.tsx    case study (static, one per shoot)
+  page.tsx                Home 1
+  home-2|3|4/page.tsx     Home 2, 3, 4
+  work/[slug]/page.tsx    case study (static per shoot; ?v= picks the version's layout)
   credits/page.tsx        media credits, generated from content/credits.json
 app/
   icon.svg, favicon.ico, apple-icon.png   generated brand icons
 components/
   three/HeroScene.tsx     3D blob, orbiting shapes, sparkles, local lighting
   three/HeroCanvas.tsx    loads 3D only on capable devices, else a CSS orb fallback
-  layouts/                HomeRouter + home/{Collage,Editorial,Cinematic,Grid}Home
-                          CaseRouter + case/{Editorial,Split,Index,Reel}Case
+  v1/ v2/ v3/ v4/         one folder per version: Home, Case and that version's own
+                          Nav/Rail, Hero/Masthead, Work, Stats, Services, Process,
+                          Packages, Team, Awards, Reviews, Faq, Journal, Contact, Footer
+  backdrop/               HeroCollage, HeroVideo (shared hero backdrops)
   preview/                SettingsPanel, BrandMarks (the four logo marks)
-  sections/               Navbar, Hero, HeroCollage, HeroVideo, Marquee, Work, Stats,
-                          Services, Process, Packages, Team, Awards, Reviews, Faq,
-                          Journal, Contact, Footer
   work/                   CaseHero, CaseStudyGallery (lightbox), ProjectFilm,
-                          NextShoot, ReadingProgress, ParallaxCover,
-                          WorkList, WorkReel, WorkArchive
-  ui/                     Reveal, MagneticButton, TiltCard, SmoothScroll,
+                          NextShoot, ReadingProgress — shared by all four case pages
+  ui/                     VersionSwitcher (the header dropdown), Reveal, MagneticButton,
+                          TiltCard, SmoothScroll,
                           SectionHeading, ProjectVisual (cover + hover video),
                           Logo (aperture mark + wordmark), SiteLoader,
                           SafeImage + MediaPlaceholder (fallback artwork)
@@ -359,7 +369,9 @@ content/
   credits.json            generated; rendered at /credits
 lib/useMediaPolicy.ts     decides when video may play at all
 lib/sendEnquiry.ts        optional EmailJS delivery for booking enquiries
-lib/preview.tsx           brand/layout state, CSS-variable repainting
+lib/version.ts            the four versions: URLs, labels, workHref/parseVersion
+lib/preview.tsx           brand state (name, accent, ground, logo), CSS-variable repaint
+lib/useEnquiry.ts         booking state + WhatsApp/EmailJS hand-off, shared by all four
 lib/scrollLock.ts         freezes Lenis + body while an overlay is open
 scripts/fetch-media.mjs   the downloader
 public/media/             downloaded files + a public copy of credits.json

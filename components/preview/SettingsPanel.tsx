@@ -2,23 +2,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { site } from '@/content/site';
-import { usePreview, type CaseLayout, type HomeLayout, type LogoMark } from '@/lib/preview';
+import { usePreview, type LogoMark } from '@/lib/preview';
 import { useScrollLock } from '@/lib/scrollLock';
 import { Aperture, Frame, Lens, Monogram } from './BrandMarks';
-
-const HOME_LAYOUTS: { id: HomeLayout; label: string; note: string }[] = [
-  { id: 'collage', label: 'Collage', note: 'Drifting contact sheet + pinned work rail' },
-  { id: 'editorial', label: 'Editorial', note: 'Big type, work as a list, image follows cursor' },
-  { id: 'cinematic', label: 'Cinematic', note: 'Showreel hero, full-screen snap panels' },
-  { id: 'grid', label: 'Grid', note: 'Gallery-first archive with a sticky side nav' },
-];
-
-const CASE_LAYOUTS: { id: CaseLayout; label: string; note: string }[] = [
-  { id: 'editorial', label: 'Editorial', note: 'Full-bleed hero, sticky deliverables rail' },
-  { id: 'split', label: 'Split', note: 'Pinned info column, scrolling image stream' },
-  { id: 'index', label: 'Index', note: 'Narrow measure broken by full-bleed frames' },
-  { id: 'reel', label: 'Reel', note: 'Horizontal spine you drive with the wheel' },
-];
 
 const MARKS: { id: LogoMark; label: string }[] = [
   { id: 'aperture', label: 'Aperture' },
@@ -122,7 +108,8 @@ export default function SettingsPanel() {
               <div>
                 <p className="font-display text-lg font-semibold">Try your brand</p>
                 <p className="mt-1 text-sm text-muted">
-                  Everything here is local to your browser. Nothing is saved to the site.
+                  Name, colour and logo — local to your browser, nothing is saved to the site.
+                  Layouts live in the header dropdown.
                 </p>
               </div>
               <button
@@ -237,39 +224,6 @@ export default function SettingsPanel() {
                 {logoError && <p className="mt-2 text-xs text-rose-400">{logoError}</p>}
               </div>
 
-              <div>
-                <p className={row}>Home layout</p>
-                <div className="space-y-2">
-                  {HOME_LAYOUTS.map((l) => (
-                    <button
-                      key={l.id}
-                      type="button"
-                      onClick={() => set({ homeLayout: l.id })}
-                      className={`${chip(brand.homeLayout === l.id)} block w-full`}
-                    >
-                      <span className="font-display font-semibold">{l.label}</span>
-                      <span className="mt-0.5 block text-xs text-muted">{l.note}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <p className={row}>Case-study layout</p>
-                <div className="space-y-2">
-                  {CASE_LAYOUTS.map((l) => (
-                    <button
-                      key={l.id}
-                      type="button"
-                      onClick={() => set({ caseLayout: l.id })}
-                      className={`${chip(brand.caseLayout === l.id)} block w-full`}
-                    >
-                      <span className="font-display font-semibold">{l.label}</span>
-                      <span className="mt-0.5 block text-xs text-muted">{l.note}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
             </div>
 
             <footer className="flex gap-3 border-t border-line px-6 py-5">

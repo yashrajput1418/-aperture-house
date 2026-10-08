@@ -2,8 +2,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { site } from '@/content/site';
 
-export type HomeLayout = 'collage' | 'editorial' | 'cinematic' | 'grid';
-export type CaseLayout = 'editorial' | 'split' | 'index' | 'reel';
 export type LogoMark = 'aperture' | 'lens' | 'frame' | 'monogram' | 'custom';
 
 export type Brand = {
@@ -14,8 +12,6 @@ export type Brand = {
   mark: LogoMark;
   /** data: URL for an uploaded logo, only used when mark === 'custom' */
   logoSrc?: string;
-  homeLayout: HomeLayout;
-  caseLayout: CaseLayout;
 };
 
 export const defaultBrand: Brand = {
@@ -24,8 +20,6 @@ export const defaultBrand: Brand = {
   ink: site.preview.grounds[0].ink,
   ink2: site.preview.grounds[0].ink2,
   mark: 'aperture',
-  homeLayout: site.layouts.home,
-  caseLayout: site.layouts.caseStudy,
 };
 
 type Ctx = {

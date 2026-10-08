@@ -1,5 +1,6 @@
-import HomeRouter from '@/components/layouts/HomeRouter';
+import Home from '@/components/v1/Home';
 
-export default function Home() {
-  return <HomeRouter />;
+/** Version 1 owns `/` — see lib/version.ts for the other three. */
+export default function Page() {
+  return <Home />;
 }

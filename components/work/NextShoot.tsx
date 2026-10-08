@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import SafeImage from '@/components/ui/SafeImage';
 import type { Project } from '@/content/site';
+import { workHref, type Version } from '@/lib/version';
 
-/** Full-bleed teaser for the next case study. */
-export default function NextShoot({ project }: { project: Project }) {
+/** Full-bleed teaser for the next case study, kept inside the current version. */
+export default function NextShoot({ project, version }: { project: Project; version: Version }) {
   return (
-    <Link href={`/work/${project.slug}`} className="group relative block h-[62svh] min-h-[380px] overflow-hidden">
+    <Link href={workHref(version, project.slug)} className="group relative block h-[62svh] min-h-[380px] overflow-hidden">
       {project.cover && (
         <SafeImage
           src={project.cover.src}

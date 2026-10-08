@@ -97,19 +97,10 @@ export const site = {
   },
 
   /**
-   * Which layout each page uses by default. The demo settings panel can
-   * switch these live; with `preview.enabled` false these are simply the
-   * layouts the site ships with.
-   */
-  layouts: {
-    home: 'collage' as 'collage' | 'editorial' | 'cinematic' | 'grid',
-    caseStudy: 'editorial' as 'editorial' | 'split' | 'index' | 'reel',
-  },
-
-  /**
    * Demo-only brand playground: a floating settings panel that lets a
-   * visitor try their own studio name, logo and colours, and switch
-   * between the bundled layouts.
+   * visitor try their own studio name, logo and colours. (Layouts are not
+   * in here — each of the four versions is its own URL, switched from the
+   * dropdown in the header. See lib/version.ts.)
    *
    * Set `enabled: false` for a real studio's site — the panel, its context
    * and its JavaScript are then not rendered at all, so visitors cannot
