@@ -1,8 +1,12 @@
+'use client';
 import Link from 'next/link';
 import { site } from '@/content/site';
+import { usePreview } from '@/lib/preview';
 import Logo from '@/components/ui/Logo';
 
 export default function Footer() {
+  const { brand } = usePreview();
+  const name = brand.name || site.name;
   return (
     <footer className="relative overflow-hidden border-t border-line">
       <div className="pointer-events-none absolute -bottom-40 left-1/2 h-80 w-[80%] -translate-x-1/2 rounded-full bg-violet/30 blur-[120px]" />
@@ -20,10 +24,10 @@ export default function Footer() {
           </div>
         </div>
         <p className="mt-16 select-none font-display text-[18vw] font-bold leading-none tracking-tighter text-white/[0.06] lg:text-[14rem]">
-          {site.name.split(' ')[0]}
+          {name.split(' ')[0]}
         </p>
         <div className="mt-6 flex flex-wrap justify-between gap-4 text-sm text-muted">
-          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {name}. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/credits" className="hover:text-white">Credits</Link>
             <Link href="/#top" className="hover:text-white">Back to top ↑</Link>

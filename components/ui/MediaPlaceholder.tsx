@@ -1,4 +1,5 @@
-import { ApertureMark } from './Logo';
+'use client';
+import BrandMark from '@/components/preview/BrandMarks';
 
 /**
  * Shown wherever an image is missing or fails to load — before
@@ -30,7 +31,7 @@ export default function MediaPlaceholder({
         style={{ background: `linear-gradient(135deg, ${a}, ${b})` }}
       />
       <div className="relative flex flex-col items-center gap-3 text-center">
-        <ApertureMark className={`${markClassName} text-accent/50`} />
+        <BrandMark className={`${markClassName} text-accent/50`} />
         {label && (
           <span className="max-w-[80%] font-display text-[0.65rem] uppercase tracking-[0.2em] text-white/35">
             {label}

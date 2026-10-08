@@ -3,6 +3,8 @@ import './globals.css';
 import { site } from '@/content/site';
 import SmoothScroll from '@/components/ui/SmoothScroll';
 import SiteLoader from '@/components/ui/SiteLoader';
+import { PreviewProvider } from '@/lib/preview';
+import SettingsPanel from '@/components/preview/SettingsPanel';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -29,9 +31,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <noscript>
           <style>{`#site-loader{display:none!important}`}</style>
         </noscript>
-        <SiteLoader />
-        <SmoothScroll />
-        {children}
+        <PreviewProvider>
+          <SiteLoader />
+          <SmoothScroll />
+          {children}
+          <SettingsPanel />
+        </PreviewProvider>
       </body>
     </html>
   );

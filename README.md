@@ -69,12 +69,12 @@ in `content/site.ts`:
 | File | What |
 |---|---|
 | `public/media/<slug>/cover.webp` | 1920px landscape cover |
-| `public/media/<slug>/gallery-1..4.webp` | 1400px case-study gallery |
+| `public/media/<slug>/gallery-1..8.webp` | 1400px case-study gallery |
 | `public/media/<slug>/preview.mp4` | ≤15s, ≤1280px card-hover preview |
 | `public/media/<slug>/preview-poster.webp` | poster frame for that video |
 | `public/media/hero/hero.mp4` | ≤20s, ≤1920px hero showreel |
 | `public/media/hero/hero-poster.webp` | hero poster frame |
-| `public/media/team/member-1..6.webp` | 900px studio portraits |
+| `public/media/team/member-1..8.webp` | 900px studio portraits |
 | `content/credits.json` | author + licence for **every** file (imported by `/credits`) |
 | `public/media/credits.json` | same list, fetchable directly |
 | `content/media.json` | the manifest `content/site.ts` imports |
@@ -206,7 +206,52 @@ So a fresh clone looks intentional rather than broken, and a missing file in pro
 degrades to the studio mark instead of a torn-image icon. Covered: shoot cards, case-study
 covers, galleries and the lightbox, team portraits, hero collage tiles and video posters.
 
-## 6. The case-study page
+## 6. Layouts & the brand playground
+
+### Four home layouts, four case-study layouts
+
+| Home | What it is |
+|---|---|
+| `collage` *(default)* | Drifting contact-sheet hero, pinned horizontal work rail |
+| `editorial` | No hero image. Centred type; work is an index whose cover follows your cursor |
+| `cinematic` | Showreel hero, then every shoot as a full-height snap panel |
+| `grid` | No hero at all — opens into a filterable archive with a sticky side rail |
+
+| Case study | What it is |
+|---|---|
+| `editorial` *(default)* | Full-bleed parallax hero, sticky deliverables rail, numbered sections |
+| `split` | Pinned info column, one long stream of frames scrolling past it |
+| `index` | Printed-essay measure interrupted by edge-to-edge frames, facts set as a colophon |
+| `reel` | The gallery is a horizontal spine you drive with the wheel, story panels between groups |
+
+Pick the shipping defaults in `site.layouts`. `HomeRouter` / `CaseRouter` keep the default
+in the main bundle and code-split the other three, so a visitor downloads only the layout
+they are looking at.
+
+### The brand playground
+A floating ⚙ opens a panel where a visitor can set the studio name, accent, background,
+logo (four built-in marks or their own upload) and both layouts. Changes are live: the
+design tokens are CSS custom properties, so writing `--color-accent` on `:root` repaints
+buttons, headlines, active chips, the logo mark and the progress bars at once.
+
+State persists in `localStorage` and travels in a `?brand=` link, so someone can send
+themselves their mock-up. The uploaded logo is deliberately left out of that link — it is
+browser-local, capped at 400KB.
+
+```ts
+preview: { enabled: true }   // ← demo
+preview: { enabled: false }  // ← a real studio's site
+```
+
+With the flag off the panel renders nothing and the context falls through to `site.ts`,
+so a real client's visitors cannot repaint their brand.
+
+**Two limits worth knowing.** Server-rendered `<title>`, Open Graph tags and `/credits`
+read `site.name` directly, so a previewed brand name will not appear there — that is
+correct, the preview is a visitor's local mock-up, not a rename. And a custom logo lives
+only in that browser.
+
+## 7. The case-study page
 
 `/work/<slug>` is built as an editorial scroll rather than one centred column:
 
@@ -225,7 +270,7 @@ covers, galleries and the lightbox, team portraits, hero collage tiles and video
 `ReadingProgress` draws a thin accent bar across the top, and a floating "← All work" chip
 stays available the whole way down.
 
-## 7. Logo & favicon
+## 8. Logo & favicon
 
 The mark is an aperture iris — six blades around a hexagonal opening — drawn as plain SVG
 geometry, so there is no image file to re-export when you change size or colour.
@@ -251,7 +296,14 @@ To recolour, change `--color-accent` in `app/globals.css` for the site; the stan
 `logo.svg` and the icons carry the colour inline, so edit those files directly (they are
 small and hand-readable).
 
-## 8. Licence notes (read before you publish)
+## Known issue
+
+`next build` occasionally fails with `Invariant: no direct app page entry found for /<route>`
+on a cold `.next`. It names a different route each time (`/credits`, `/favicon.ico`), it is
+a Next 15.5.27 bug in page-data collection rather than anything in this repo, and it passes
+on a rerun. If CI trips on it, rerun the build.
+
+## 9. Licence notes (read before you publish)
 
 | Source | Licence | Attribution |
 |---|---|---|
@@ -287,10 +339,15 @@ app/
 components/
   three/HeroScene.tsx     3D blob, orbiting shapes, sparkles, local lighting
   three/HeroCanvas.tsx    loads 3D only on capable devices, else a CSS orb fallback
+  layouts/                HomeRouter + home/{Collage,Editorial,Cinematic,Grid}Home
+                          CaseRouter + case/{Editorial,Split,Index,Reel}Case
+  preview/                SettingsPanel, BrandMarks (the four logo marks)
   sections/               Navbar, Hero, HeroCollage, HeroVideo, Marquee, Work, Stats,
-                          Services, Process, Packages, Team, Reviews, Contact, Footer
+                          Services, Process, Packages, Team, Awards, Reviews, Faq,
+                          Journal, Contact, Footer
   work/                   CaseHero, CaseStudyGallery (lightbox), ProjectFilm,
-                          NextShoot, ReadingProgress, ParallaxCover
+                          NextShoot, ReadingProgress, ParallaxCover,
+                          WorkList, WorkReel, WorkArchive
   ui/                     Reveal, MagneticButton, TiltCard, SmoothScroll,
                           SectionHeading, ProjectVisual (cover + hover video),
                           Logo (aperture mark + wordmark), SiteLoader,
@@ -302,6 +359,8 @@ content/
   credits.json            generated; rendered at /credits
 lib/useMediaPolicy.ts     decides when video may play at all
 lib/sendEnquiry.ts        optional EmailJS delivery for booking enquiries
+lib/preview.tsx           brand/layout state, CSS-variable repainting
+lib/scrollLock.ts         freezes Lenis + body while an overlay is open
 scripts/fetch-media.mjs   the downloader
 public/media/             downloaded files + a public copy of credits.json
 ```
@@ -317,7 +376,14 @@ public/media/             downloaded files + a public copy of credits.json
 - All images go through `next/image` with explicit `sizes` and base64 blur placeholders.
 - 3D is lazy-loaded client-side and skipped without WebGL, on very low-end devices, or
   under *reduce motion* (a static gradient orb is shown).
-- The lightbox supports ← → and Esc, swipe on touch, locks body scroll and restores focus.
+- The lightbox supports ← → and Esc, swipe on touch, and restores focus on close.
+- **Overlays freeze the page properly.** The page is driven by Lenis, which listens for
+  wheel events on the window — so `overflow: hidden` on `<body>` does *not* stop it. Every
+  overlay (settings sheet, lightbox, loader) goes through `lib/scrollLock.ts`, which stops
+  the Lenis instance as well as pinning the body, and compensates for the scrollbar width
+  so the page does not jump sideways. Scrollable overlay content carries
+  `data-lenis-prevent` (Lenis skips it, native scrolling works) plus `overscroll-contain`
+  (no chaining to the page once it reaches its ends).
 - The hero collage freezes flat under `prefers-reduced-motion`, drops to 3 columns on
   phones, and only mixes in video tiles where the connection policy allows it.
 - No external image hosts and no external 3D assets: everything is local.

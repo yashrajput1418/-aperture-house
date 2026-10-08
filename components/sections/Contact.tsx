@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { site } from '@/content/site';
 import Reveal from '@/components/ui/Reveal';
+import { usePreview } from '@/lib/preview';
 import { emailjsConfigured, sendByEmailJs, type Enquiry } from '@/lib/sendEnquiry';
 
 const { types, budgets, cities } = site.contact;
@@ -10,6 +11,8 @@ const { types, budgets, cities } = site.contact;
 const STEPS = ['What & where', 'When & budget', 'Your details'] as const;
 
 export default function Contact() {
+  const { brand } = usePreview();
+  const brandName = brand.name || site.name;
   const [step, setStep] = useState(0);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
@@ -37,7 +40,7 @@ export default function Contact() {
   );
 
   const text =
-    `Hi ${site.name}! I'm ${form.name}.\n` +
+    `Hi ${brandName}! I'm ${form.name}.\n` +
     `Shoot: ${shoot}\n` +
     `Date: ${prettyDate}\n` +
     `Where: ${city}\n` +

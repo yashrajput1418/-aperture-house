@@ -1,4 +1,7 @@
+'use client';
 import { site } from '@/content/site';
+import BrandMark, { Aperture } from '@/components/preview/BrandMarks';
+import { usePreview } from '@/lib/preview';
 
 /**
  * The studio logo: aperture mark + wordmark.
@@ -8,16 +11,7 @@ import { site } from '@/content/site';
  * The mark inherits `currentColor`, so it recolours with its container.
  */
 export function ApertureMark({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 64 64" fill="none" aria-hidden className={className}>
-      {/* lens barrel */}
-      <circle cx="32" cy="32" r="25" stroke="currentColor" strokeWidth="3.2" />
-      {/* iris blades */}
-      <path d="M 32 21 L 12.99 18.19 M 22.47 26.5 L 10.53 41.56 M 22.47 37.5 L 29.54 55.37 M 32 43 L 51.01 45.81 M 41.53 37.5 L 53.47 22.44 M 41.53 26.5 L 34.46 8.63" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" />
-      {/* aperture opening */}
-      <path d="M 32 21 L 22.47 26.5 L 22.47 37.5 L 32 43 L 41.53 37.5 L 41.53 26.5 Z" stroke="currentColor" strokeWidth="3.2" strokeLinejoin="round" />
-    </svg>
-  );
+  return <Aperture className={className} />;
 }
 
 export default function Logo({
@@ -29,10 +23,12 @@ export default function Logo({
   markClassName?: string;
   showWordmark?: boolean;
 }) {
-  const [first, ...rest] = site.name.split(' ');
+  const { brand } = usePreview();
+  const name = brand.name || site.name;
+  const [first, ...rest] = name.split(' ');
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <ApertureMark className={markClassName} />
+      <BrandMark className={markClassName} />
       {showWordmark && (
         <span className="font-display text-lg font-bold tracking-tight">
           {first}
@@ -40,7 +36,7 @@ export default function Logo({
           {rest.join(' ')}
         </span>
       )}
-      <span className="sr-only">{site.name}</span>
+      <span className="sr-only">{name}</span>
     </span>
   );
 }

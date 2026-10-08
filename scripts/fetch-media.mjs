@@ -15,9 +15,9 @@
  *   PIXABAY_API_KEY=...
  *
  * Writes:
- *   public/media/<project-slug>/cover.webp, gallery-1..4.webp, preview.mp4, preview-poster.webp
+ *   public/media/<project-slug>/cover.webp, gallery-1..8.webp, preview.mp4, preview-poster.webp
  *   public/media/hero/hero.mp4, hero-poster.webp
- *   public/media/team/member-1..6.webp
+ *   public/media/team/member-1..8.webp
  *   content/credits.json        ← author + licence for every file (imported by /credits)
  *   public/media/credits.json   ← same list, fetchable directly
  *   content/media.json          ← manifest the site imports
@@ -66,6 +66,11 @@ async function readHeroQuery() {
   return m ? m[1] : 'abstract dark studio';
 }
 /** Several queries, so six portraits do not come from one photographer. */
+/** How many gallery frames each shoot gets. */
+const GALLERY_SLOTS = [1, 2, 3, 4, 5, 6, 7, 8];
+/** How many studio portraits to fetch. */
+const TEAM_SLOTS = [1, 2, 3, 4, 5, 6, 7, 8];
+
 const TEAM_QUERIES = [
   'professional headshot plain background',
   'corporate headshot business portrait',
@@ -611,7 +616,7 @@ for (const p of projectList) {
   const entry = { cover: undefined, gallery: [], video: undefined };
 
   const coverBase = path.join(dir, 'cover');
-  const galleryBases = [1, 2, 3, 4].map((i) => path.join(dir, `gallery-${i}`));
+  const galleryBases = GALLERY_SLOTS.map((i) => path.join(dir, `gallery-${i}`));
   const videoAbs = path.join(dir, 'preview.mp4');
 
   const needPhotos =
@@ -619,7 +624,9 @@ for (const p of projectList) {
     galleryBases.some((b) => !existingImage(b)) ||
     !prev.projects?.[p.slug]?.cover;
 
-  const pool = needPhotos ? await photoPool(p.mediaQuery, { perPage: 24, orientation: 'landscape', need: 5 }) : [];
+  const pool = needPhotos
+    ? await photoPool(p.mediaQuery, { perPage: 30, orientation: 'landscape', need: GALLERY_SLOTS.length + 1 })
+    : [];
   if (needPhotos && !pool.length) warn(`No photos found for "${p.mediaQuery}".`);
 
   const placeholder = (credit) => ({ alt: p.title, credit, url: '', downloadHeaders: {} });
@@ -631,7 +638,7 @@ for (const p of projectList) {
         usedFor: `${p.title} — cover`,
       });
     }
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < GALLERY_SLOTS.length; i++) {
       const base = galleryBases[i];
       const cand = pool[i + 1];
       if (!cand && !existingImage(base)) continue;
@@ -679,13 +686,19 @@ for (const p of projectList) {
 log('\n● Team portraits');
 {
   const dir = path.join(MEDIA_DIR, 'team');
-  const bases = [1, 2, 3, 4, 5, 6].map((i) => path.join(dir, `member-${i}`));
-  const need = bases.some((b) => !existingImage(b)) || (prev.team || []).length < 6;
+  const bases = TEAM_SLOTS.map((i) => path.join(dir, `member-${i}`));
+  const need = bases.some((b) => !existingImage(b)) || (prev.team || []).length < TEAM_SLOTS.length;
   const pool = need
-    ? await photoPoolMulti(TEAM_QUERIES, { perPage: 12, orientation: 'portrait', width: 1000, need: 6, needAuthors: 6 })
+    ? await photoPoolMulti(TEAM_QUERIES, {
+        perPage: 12,
+        orientation: 'portrait',
+        width: 1000,
+        need: TEAM_SLOTS.length,
+        needAuthors: TEAM_SLOTS.length,
+      })
     : [];
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < TEAM_SLOTS.length; i++) {
     const base = bases[i];
     const cand = pool[i];
     if (!cand && !existingImage(base)) continue;

@@ -2,7 +2,9 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { site } from '@/content/site';
-import { ApertureMark } from './Logo';
+import BrandMark from '@/components/preview/BrandMarks';
+import { usePreview } from '@/lib/preview';
+import { useScrollLock } from '@/lib/scrollLock';
 
 /**
  * Full-screen loader shown until the page has actually finished loading —
@@ -20,6 +22,8 @@ import { ApertureMark } from './Logo';
  */
 export default function SiteLoader() {
   const reduce = useReducedMotion();
+  const { brand } = usePreview();
+  const brandName = brand.name || site.name;
   const [visible, setVisible] = useState(true);
   const [progress, setProgress] = useState(8);
 
@@ -120,15 +124,8 @@ export default function SiteLoader() {
     };
   }, [reduce]);
 
-  // hold the page still while the loader is up
-  useEffect(() => {
-    if (!visible) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = prev;
-    };
-  }, [visible]);
+  // hold the page still while the loader is up (Lenis included)
+  useScrollLock(visible);
 
   return (
     <AnimatePresence>
@@ -142,7 +139,7 @@ export default function SiteLoader() {
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-ink"
           role="status"
           aria-live="polite"
-          aria-label={`Loading ${site.name}`}
+          aria-label={`Loading ${brandName}`}
         >
           {/* the mark opens like an iris as it loads */}
           <motion.div
@@ -155,13 +152,13 @@ export default function SiteLoader() {
               animate={reduce ? undefined : { rotate: 360 }}
               transition={{ repeat: Infinity, duration: 7, ease: 'linear' }}
             >
-              <ApertureMark className="h-16 w-16 text-accent" />
+              <BrandMark className="h-16 w-16 text-accent" />
             </motion.div>
             <div className="pointer-events-none absolute inset-0 -z-10 scale-[2.2] rounded-full bg-accent/10 blur-2xl" />
           </motion.div>
 
           <p className="mt-8 font-display text-sm font-semibold uppercase tracking-[0.3em] text-white/80">
-            {site.name}
+            {brandName}
           </p>
 
           <div className="mt-6 h-px w-40 overflow-hidden bg-white/10">

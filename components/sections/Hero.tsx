@@ -46,9 +46,15 @@ export default function Hero() {
           <span className="h-2 w-2 animate-pulse rounded-full bg-accent" /> {badge}
         </motion.p>
 
-        <h1 className="font-display text-[9.5vw] font-bold leading-[0.95] tracking-tighter sm:text-[8.5vw] sm:leading-[0.92] lg:text-[8rem]">
+        {/* Each word is its own span so the line can wrap, which leaves the
+            accessible name unspaced — give the real sentence to assistive
+            tech and hide the decorative spans from it. */}
+        <h1
+          aria-label={headline.map((line) => line.join(' ')).join(' ')}
+          className="font-display text-[9.5vw] font-bold leading-[0.95] tracking-tighter sm:text-[8.5vw] sm:leading-[0.92] lg:text-[8rem]"
+        >
           {headline.map((line, li) => (
-            <span key={li} className="flex flex-wrap gap-x-[0.25em]">
+            <span key={li} aria-hidden className="flex flex-wrap gap-x-[0.25em]">
               {line.map((w) => {
                 const i = n++;
                 const accent = headlineAccent.includes(w);

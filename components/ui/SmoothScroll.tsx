@@ -1,11 +1,13 @@
 'use client';
 import { useEffect } from 'react';
 import Lenis from 'lenis';
+import { setLenis } from '@/lib/scrollLock';
 
 export default function SmoothScroll() {
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const lenis = new Lenis({ duration: 1.15, smoothWheel: true });
+    setLenis(lenis);
     let raf = 0;
     const loop = (t: number) => { lenis.raf(t); raf = requestAnimationFrame(loop); };
     raf = requestAnimationFrame(loop);
@@ -22,7 +24,12 @@ export default function SmoothScroll() {
       lenis.scrollTo(el as HTMLElement, { offset: -70 });
     };
     document.addEventListener('click', onClick);
-    return () => { cancelAnimationFrame(raf); document.removeEventListener('click', onClick); lenis.destroy(); };
+    return () => {
+      cancelAnimationFrame(raf);
+      document.removeEventListener('click', onClick);
+      lenis.destroy();
+      setLenis(null);
+    };
   }, []);
   return null;
 }

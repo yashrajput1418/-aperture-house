@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import SafeImage from '@/components/ui/SafeImage';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { MediaImage } from '@/content/media';
+import { useScrollLock } from '@/lib/scrollLock';
 
 /**
  * Masonry gallery + lightbox.
@@ -23,6 +24,9 @@ export default function CaseStudyGallery({ images, title }: { images: MediaImage
     [images.length]
   );
 
+  // freezes Lenis too — body overflow alone does not stop the smooth scroller
+  useScrollLock(open !== null);
+
   useEffect(() => {
     if (open === null) return;
     dialog.current?.focus();
@@ -32,12 +36,7 @@ export default function CaseStudyGallery({ images, title }: { images: MediaImage
       else if (e.key === 'ArrowLeft') step(-1);
     };
     document.addEventListener('keydown', onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prevOverflow;
-    };
+    return () => document.removeEventListener('keydown', onKey);
   }, [open, close, step]);
 
   if (!images.length) return null;
@@ -93,7 +92,8 @@ export default function CaseStudyGallery({ images, title }: { images: MediaImage
               if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
               touchX.current = null;
             }}
-            className="fixed inset-0 z-[70] flex items-center justify-center bg-ink/95 p-4 outline-none backdrop-blur-sm sm:p-10"
+            data-lenis-prevent
+            className="fixed inset-0 z-[70] flex items-center justify-center overscroll-contain bg-ink/95 p-4 outline-none backdrop-blur-sm sm:p-10"
           >
             <motion.div
               key={current.src}
