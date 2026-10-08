@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+
+# cached Unsplash / Pixabay API responses (npm run fetch:media)
+scripts/.cache

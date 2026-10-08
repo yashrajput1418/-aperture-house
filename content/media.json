@@ -1,0 +1,649 @@
+{
+  "generatedAt": "2026-10-08T11:29:18.621Z",
+  "hero": {
+    "video": {
+      "src": "/media/hero/hero.mp4",
+      "poster": "/media/hero/hero-poster.webp",
+      "width": 1920,
+      "height": 1080,
+      "duration": 16,
+      "credit": {
+        "source": "Pixabay",
+        "author": "xBriantcx",
+        "authorUrl": "https://pixabay.com/users/36275440/",
+        "sourceUrl": "https://pixabay.com/videos/id-243647/",
+        "license": "Pixabay Content License"
+      }
+    },
+    "poster": {
+      "src": "/media/hero/hero-poster.webp",
+      "width": 1600,
+      "height": 900,
+      "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAwBACdASoUAAsAPwFqrE6rJiQiMAgBYCAJbACdMoRwACBKgIaBuRGsfQAA/MR66Ef26xCQjM03k4dXUk4Qgj/AxMoHCs/yhJBHoku3RZk6a8/krgrpWlXnTOx7BC6dgPVhcLwnk1tWw/OuVRQAAA==",
+      "alt": "Studio showreel still",
+      "credit": {
+        "source": "Pixabay",
+        "author": "xBriantcx",
+        "authorUrl": "https://pixabay.com/users/36275440/",
+        "sourceUrl": "https://pixabay.com/videos/id-243647/",
+        "license": "Pixabay Content License"
+      }
+    }
+  },
+  "projects": {
+    "anika-and-dev-wedding": {
+      "cover": {
+        "src": "/media/anika-and-dev-wedding/cover.webp",
+        "width": 1920,
+        "height": 1280,
+        "blurDataURL": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAACwAwCdASoUAA0APwFqrE6rJiQiMAgBYCAJbACdACGFCVrjg9CcAAD+kGhlRUAgcbkXBP31JKyYJUBmPpfdadrQZBOpWnPtvH6rKYPACCs/mAh81stIMNuWy4HiOmeOI//WteJIbYOMB+5CvhP0D2aRMv89f0g7aQ7XceZJLKul14gAAAA=",
+        "alt": "A couple in traditional wedding attire sitting under a floral canopy during a ceremony",
+        "credit": {
+          "source": "Unsplash",
+          "author": "AMISH THAKKAR",
+          "authorUrl": "https://unsplash.com/@amishthakkar?utm_source=nova_studio_template&utm_medium=referral",
+          "sourceUrl": "https://unsplash.com/photos/wedding-ceremony-under-floral-canopy-7O422yG_b80?utm_source=nova_studio_template&utm_medium=referral",
+          "license": "Unsplash License"
+        }
+      },
+      "gallery": [
+        {
+          "src": "/media/anika-and-dev-wedding/gallery-1.webp",
+          "width": 1400,
+          "height": 934,
+          "blurDataURL": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAACQAwCdASoUAA0APwFqrE8rJiQiMAgBYCAJbACdEfqgBXZfgSxAAP5Iu3qFzgapAgrVeP4DfSF2CtmIHP6J0UIwcqSUP9m7FRsGdE2QpIu3u15TBn0wb/++VJfBL96ys35fQHtuqR15HPfZdphtFoCmm72QqmJfaGb+fGX14bgAAA==",
+          "alt": "green and blue dragon figurine",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Vaibhav Nagare",
+            "authorUrl": "https://unsplash.com/@vaibhavnagare?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/green-and-blue-dragon-figurine-bTdn4zGz4BQ?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/anika-and-dev-wedding/gallery-2.webp",
+          "width": 1400,
+          "height": 985,
+          "blurDataURL": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABwBACdASoUAA4APwForE6rJaQiMAgBYCAJagCdMoADf2XC95CnOxaGtKngAAD+omCnpXs6oYs3jgOffxSeVCw0OF6CJxIddySNYgofZdaZFJD7rXrhylF2tRY5qDDBJZMAIIKC0hNdsWIwYxanEPkmMkklXcI/Fbm9UAGEY1obX/sB3IKVoqQVgUzgAA==",
+          "alt": "a woman in a yellow dress and a man in a white suit",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Abhay Patel",
+            "authorUrl": "https://unsplash.com/@abhaypatel?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/a-woman-in-a-yellow-dress-and-a-man-in-a-white-suit-DC0d6A2kX0k?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/anika-and-dev-wedding/gallery-3.webp",
+          "width": 1400,
+          "height": 933,
+          "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwAwCdASoUAA0APwForE6rJiQiMAgBYCAJbACsABulgkNjG5gDjfBgAP7uoK94IAsbycmmQ4LKnyjCTt8Wm9+xTORjTFVxLcVA1AT0hzI8Ng94FazZ+w9p0wCH3HlcsADQFJVwh/ejm/EzqF3hvQRtrbaMnIAA",
+          "alt": "A bride and groom in traditional indian wedding attire",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Sabesh Photography LTD",
+            "authorUrl": "https://unsplash.com/@sabesh?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/a-bride-and-groom-in-traditional-indian-wedding-attire-OzyvCE9a60M?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/anika-and-dev-wedding/gallery-4.webp",
+          "width": 1400,
+          "height": 933,
+          "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAADwAwCdASoUAA0APwFqrU8rJiQiMAgBYCAJYgCdAB7H7uju4nlKffZwAPcvLNjOxVI+ZHf/nUDy0FM7mMyxpDoFan8wMTKqYqRGmhgXsxlSkPGKBS55BVdYappgRT21W3nq+Uhg/4HMBqyGL/zvNrXuUgGgAA==",
+          "alt": "A man in a white turban standing in front of a mirror",
+          "credit": {
+            "source": "Unsplash",
+            "author": "iKshana Productions",
+            "authorUrl": "https://unsplash.com/@ikshanaproductions?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/a-man-in-a-white-turban-standing-in-front-of-a-mirror-no9ZyMXnUr8?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        }
+      ],
+      "video": {
+        "src": "/media/anika-and-dev-wedding/preview.mp4",
+        "poster": "/media/anika-and-dev-wedding/preview-poster.webp",
+        "width": 1280,
+        "height": 720,
+        "duration": 15,
+        "credit": {
+          "source": "Pixabay",
+          "author": "choxyltd",
+          "authorUrl": "https://pixabay.com/users/22731022/",
+          "sourceUrl": "https://pixabay.com/videos/id-189020/",
+          "license": "Pixabay Content License"
+        }
+      }
+    },
+    "coastal-pre-wedding": {
+      "cover": {
+        "src": "/media/coastal-pre-wedding/cover.webp",
+        "width": 1920,
+        "height": 1282,
+        "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQBACdASoUAA0APwForE6rJaQiMAgBYCAJYwC7ACHhjguChzICaaSyQAD+4Rhz1hTcthXFXxVSQjfrZ6ASrOfPCciHf0Sif72gS4U8QTEJQiXVjJiZsgCJ4AA=",
+        "alt": "A man and a woman standing in a field of tall grass",
+        "credit": {
+          "source": "Unsplash",
+          "author": "Micah & Sammie Chaffin",
+          "authorUrl": "https://unsplash.com/@micahandsammiechaffin?utm_source=nova_studio_template&utm_medium=referral",
+          "sourceUrl": "https://unsplash.com/photos/a-man-and-a-woman-standing-in-a-field-of-tall-grass-KWVJevJ_sVw?utm_source=nova_studio_template&utm_medium=referral",
+          "license": "Unsplash License"
+        }
+      },
+      "gallery": [
+        {
+          "src": "/media/coastal-pre-wedding/gallery-1.webp",
+          "width": 1400,
+          "height": 937,
+          "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAwCdASoUAA0APwFqrU8rJiQiMAgBYCAJQBgbgs0vRY1sqHzepAAA/tObSvZEYAqErMPUHnmQoPnTkw+xtRwFKOJ6dkgjPlxOoA5eA6YCXH/h2mU74B804cmZLHEJonBkW0gA",
+          "alt": "man in black long sleeve shirt kissing woman in black long sleeve shirt",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Szőcs Viola",
+            "authorUrl": "https://unsplash.com/@szcsviola?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/man-in-black-long-sleeve-shirt-kissing-woman-in-black-long-sleeve-shirt-UzCDcsCxFlk?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/coastal-pre-wedding/gallery-2.webp",
+          "width": 1400,
+          "height": 1050,
+          "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQBACdASoUAA8APwFqrE8rJiQiMAgBYCAJZgCdACPsnMTKKjPB5XtmyAD80vLFMemfUarhNLCdRQK4/OewIxrSiYgPKTnU9bL1DMYDQBe6JPXJfe4qScUdb38VfH4Te9zzz8xq2FaWZOH5E0dZe8ggb7pX7IKG6wLvYzAA",
+          "alt": "a man and a woman standing in the middle of a street",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Francis Odeyemi",
+            "authorUrl": "https://unsplash.com/@cutinamoment?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/a-man-and-a-woman-standing-in-the-middle-of-a-street--Dx908LellM?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/coastal-pre-wedding/gallery-3.webp",
+          "width": 1400,
+          "height": 933,
+          "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAABwAwCdASoUAA0APwFqrE6rJiQiMAgBYCAJaQAAXBvp4TUqlcAA/uVnW1Hyl2OTNJfDoQfenS9wwQ3SeOCxjEpM38XsmfzBu6LStSQP5fQmtIsFMb4AAA==",
+          "alt": "a man and a woman are standing in the woods",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Febe Vanermen",
+            "authorUrl": "https://unsplash.com/@febev?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/a-man-and-a-woman-are-standing-in-the-woods-0oQp-N2U26I?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/coastal-pre-wedding/gallery-4.webp",
+          "width": 1400,
+          "height": 933,
+          "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQBACdASoUAA0APwFqrE6rJiQiMAgBYCAJQBOiP/wHefq7W8pR0HqX0AD+kBjgTgFpvt/h1WJZmFRiCLyJERTt6C2YG06gq+9Sb3PQyfPQx7HRCORs2tPBTx0tfzLUtIQoASyXGb/5AjYxaY+OLAAA",
+          "alt": "A couple smiles on a beach under a cloudy sky",
+          "credit": {
+            "source": "Unsplash",
+            "author": "ARTO SURAJ",
+            "authorUrl": "https://unsplash.com/@artosuraj?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/a-couple-smiles-on-a-beach-under-a-cloudy-sky-bRjRnUStwe4?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        }
+      ],
+      "video": {
+        "src": "/media/coastal-pre-wedding/preview.mp4",
+        "poster": "/media/coastal-pre-wedding/preview-poster.webp",
+        "width": 1280,
+        "height": 720,
+        "duration": 6,
+        "credit": {
+          "source": "Pixabay",
+          "author": "Soul_Canvas",
+          "authorUrl": "https://pixabay.com/users/47793019/",
+          "sourceUrl": "https://pixabay.com/videos/id-256214/",
+          "license": "Pixabay Content License"
+        }
+      }
+    },
+    "maya-portfolio": {
+      "cover": {
+        "src": "/media/maya-portfolio/cover.webp",
+        "width": 1920,
+        "height": 1280,
+        "blurDataURL": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABwBACdASoUAA0APwForE6rJaQiMAgBYCAJbACdMoRwN5BvAAEih0PHM9EdYAD9HHVmsMTwGHr5HGFC1vXzQiK8prt7qMMJXRPf0AilA7dAIeL/4K8Ilhxt7fXtjEA+mXv8mH5m3wTvv0TRey7fYPP4Bzr8a67p3LZQqYM8LwAAAA==",
+        "alt": "woman in red top",
+        "credit": {
+          "source": "Unsplash",
+          "author": "Jordan Whitfield",
+          "authorUrl": "https://unsplash.com/@whitfieldjordan?utm_source=nova_studio_template&utm_medium=referral",
+          "sourceUrl": "https://unsplash.com/photos/woman-in-red-top-faStDXKctu0?utm_source=nova_studio_template&utm_medium=referral",
+          "license": "Unsplash License"
+        }
+      },
+      "gallery": [
+        {
+          "src": "/media/maya-portfolio/gallery-1.webp",
+          "width": 1400,
+          "height": 1000,
+          "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBACdASoUAA4APwFqrE6rJiQiMAgBYCAJZwCo9Bjbl9Z4lp8770dpwAD+l9kXRKiV9HM1SBgZ3cTZcFlc4AslvdLJde+Nsl0MEZTG1XEwCC3wb7n6kPuMpPbYd+UULMolc87vOpQW30AA",
+          "alt": "a woman with red hair is posing for a picture",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Freddy Rezvanian",
+            "authorUrl": "https://unsplash.com/@farshadrezvanian?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/a-woman-with-red-hair-is-posing-for-a-picture-1TvNzmPCSio?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/maya-portfolio/gallery-2.webp",
+          "width": 1400,
+          "height": 933,
+          "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAwCdASoUAA0APwFqrE8rJiQiMAgBYCAJQBfJBCpRrEER+9C1/YAA/n/4H1a8OoDTCbhzBUA2yUMPguW6sfehMU3rEbfSFIK04/l9fVcmFl2+oBAAAA==",
+          "alt": "photo of woman looking right",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Samuel Dixon",
+            "authorUrl": "https://unsplash.com/@samueldixon?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/photo-of-woman-looking-right--fQ5XNOcqFQ?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/maya-portfolio/gallery-3.webp",
+          "width": 1400,
+          "height": 933,
+          "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAwCdASoUAA0APwForE6rJaQiMAgBYCAJZwAATK+z+dTELZ745rAA/nDxGKmae9S2OA2n7sJLauARDqbLqwcqHQm4Lu+sTRbT5RX5/xwK/QAA",
+          "alt": "a woman is posing for a picture in a black shirt",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Timur Khan",
+            "authorUrl": "https://unsplash.com/@tikh116?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/a-woman-is-posing-for-a-picture-in-a-black-shirt-8h0hAbxyDis?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/maya-portfolio/gallery-4.webp",
+          "width": 1400,
+          "height": 933,
+          "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAACwAwCdASoUAA0APwFqrE8rJiQiMAgBYCAJbACdABdyFouH3aYoAAD9HTcrlz9ThzLBWhitgjXR+nuGR3CgOjK27O9hrV4kBFB8ZXW8KI/P/Iq3a+fdIeLraRAvQ3qCQl1YAA==",
+          "alt": "woman posing infront of softbox",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Patricia Palma",
+            "authorUrl": "https://unsplash.com/@laclem?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/woman-posing-infront-of-softbox-Se58TjWOmJM?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        }
+      ],
+      "video": {
+        "src": "/media/maya-portfolio/preview.mp4",
+        "poster": "/media/maya-portfolio/preview-poster.webp",
+        "width": 1280,
+        "height": 720,
+        "duration": 14,
+        "credit": {
+          "source": "Pixabay",
+          "author": "jorono",
+          "authorUrl": "https://pixabay.com/users/1966666/",
+          "sourceUrl": "https://pixabay.com/videos/id-18202/",
+          "license": "Pixabay Content License"
+        }
+      }
+    },
+    "maternity-golden-hour": {
+      "cover": {
+        "src": "/media/maternity-golden-hour/cover.webp",
+        "width": 1920,
+        "height": 1280,
+        "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAACwAwCdASoUAA0APwForE6rJaQiMAgBYCAJQBdgA6f6KcMZzM/h6AD+v34W33dFSe0grW5suJ3xeHhmG1nR0tJGPd7WCDHcJFc860/BJIZirmOQY0J5UDsa1Ne0T4/VfBAAAA==",
+        "alt": "woman carrying baby",
+        "credit": {
+          "source": "Unsplash",
+          "author": "Jenna Christina",
+          "authorUrl": "https://unsplash.com/@jennachristina?utm_source=nova_studio_template&utm_medium=referral",
+          "sourceUrl": "https://unsplash.com/photos/woman-carrying-baby-cRHOrqzq3J8?utm_source=nova_studio_template&utm_medium=referral",
+          "license": "Unsplash License"
+        }
+      },
+      "gallery": [
+        {
+          "src": "/media/maternity-golden-hour/gallery-1.webp",
+          "width": 1400,
+          "height": 934,
+          "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAACQAwCdASoUAA0APwForE6rJaQiMAgBYCAJbACdABMyIgic6SQgAPVZIX1ywt3qjIPajbO7dPEFTZorBm87lnEt/tLAyrju4khAFmtVzN536ZWS/LBVHFjPzqFcZGhGaH+VshjeF4B/tUY4KlhRXGiI2JAAAA==",
+          "alt": "A man kneeling down next to a woman in a pink dress",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Sonu Meghwan",
+            "authorUrl": "https://unsplash.com/@sonumeghwaniji?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/a-man-kneeling-down-next-to-a-woman-in-a-pink-dress-uGLgY4hjvYk?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/maternity-golden-hour/gallery-2.webp",
+          "width": 1400,
+          "height": 933,
+          "blurDataURL": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABwAwCdASoUAA0APwF6sFCrKKSisAgBYCAJaQAAXJ9T6tXDdpgA/siz/GXnp566BB/srqDoX3VGtZw5ExVYJeVtVrN4DDF+MuHOJQP8NtUyLuf6RoPCiMDtfwObjrA6oTBfGjysAAA=",
+          "alt": "a pregnant woman is standing in the water",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Max Böhme",
+            "authorUrl": "https://unsplash.com/@max_boehme?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/a-pregnant-woman-is-standing-in-the-water-Hff5W3b5wPA?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/maternity-golden-hour/gallery-3.webp",
+          "width": 1400,
+          "height": 933,
+          "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAABwAwCdASoUAA0APwFqrE6rJiQiMAgBYCAJaQAAXBvp4TUqlcAA/uVnW1Hyl2OTNJfDoQfenS9wwQ3SeOCxjEpM38XsmfzBu6LStSQP5fQmtIsFMb4AAA==",
+          "alt": "a man and a woman are standing in the woods",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Febe Vanermen",
+            "authorUrl": "https://unsplash.com/@febev?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/a-man-and-a-woman-are-standing-in-the-woods-0oQp-N2U26I?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/maternity-golden-hour/gallery-4.webp",
+          "width": 1400,
+          "height": 871,
+          "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADQAwCdASoUAAwAPwFqrU8rJiQiMAgBYCAJbACw7B6PPDOezexZhqAA/qmZftTHkybEDh0g4jIU/qHhoX+KB4zD8xKhzpjdvedffsBvE+SoZ+IlzzVyvxLGfQAAAA==",
+          "alt": "a woman in a red dress",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Sandeep Kashyap",
+            "authorUrl": "https://unsplash.com/@dreamworkphotography?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/a-woman-in-a-red-dress-VHuE7Taky_U?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        }
+      ],
+      "video": {
+        "src": "/media/maternity-golden-hour/preview.mp4",
+        "poster": "/media/maternity-golden-hour/preview-poster.webp",
+        "width": 1280,
+        "height": 720,
+        "duration": 15,
+        "credit": {
+          "source": "Pixabay",
+          "author": "Eaktas06",
+          "authorUrl": "https://pixabay.com/users/19261019/",
+          "sourceUrl": "https://pixabay.com/videos/id-172668/",
+          "license": "Pixabay Content License"
+        }
+      }
+    },
+    "newborn-aarav": {
+      "cover": {
+        "src": "/media/newborn-aarav/cover.webp",
+        "width": 1920,
+        "height": 1281,
+        "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAwCdASoUAA0APwFqrE6rJiQiMAgBYCAJaQAD4unmx+bl5sOSQAAA/vDfDD4TkM+cKZQZiX1UBNMnE5lf+ffKxxlLE11l1MW/Ws/gSK9zWMJIvElyFq0OtjUEGQ6Z5gAAAA==",
+        "alt": "grayscale photo of woman hugging baby",
+        "credit": {
+          "source": "Unsplash",
+          "author": "Isaac Quesada",
+          "authorUrl": "https://unsplash.com/@isaacquesada?utm_source=nova_studio_template&utm_medium=referral",
+          "sourceUrl": "https://unsplash.com/photos/grayscale-photo-of-woman-hugging-baby-dZYI4ga2eUA?utm_source=nova_studio_template&utm_medium=referral",
+          "license": "Unsplash License"
+        }
+      },
+      "gallery": [
+        {
+          "src": "/media/newborn-aarav/gallery-1.webp",
+          "width": 1400,
+          "height": 973,
+          "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACQAwCdASoUAA4APwFqrE8rJiQiMAgBYCAJYgCdACFsZ97OWMwAAP7p92U9co/p4c8vB5MFLP5Pcb+xf8zJT+4AQxZ7vVvctIJpi63iytPZf9bdMuAmaU8IhZZXAAAA",
+          "alt": "baby lying on blue textile",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Adele Morris",
+            "authorUrl": "https://unsplash.com/@adelemorrisphotography?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/baby-lying-on-blue-textile-mDiFpFl_jTs?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/newborn-aarav/gallery-2.webp",
+          "width": 1400,
+          "height": 932,
+          "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAwCdASoUAA0APwFsrU8rJiQiMAgBYCAJZwAATrgcF0vN0JhkAADMJMsEaxkmmUC7ets7MlopAZmichm4u2J+fq9Z+mbbZZf+YhSkV52vh6ZedwiPAAAA",
+          "alt": "woman in white knit sweater lying on bed",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Garrett Jackson",
+            "authorUrl": "https://unsplash.com/@gmjackson?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/woman-in-white-knit-sweater-lying-on-bed-oOnJWBMlb5A?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/newborn-aarav/gallery-3.webp",
+          "width": 1400,
+          "height": 933,
+          "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAwBACdASoUAA0APwForE6rJaQiMAgBYCAJYwCdMoACiCA8CqaB9I1PHAAA4QG/czlfntylwyUYgqeNyCKj1ammEb2wUNIyvgs4d4E7jt7zVrDB2fh0hPfF/d7YLoTnU0xjvaxiZZAkMQT7tArIC55skoYAAA==",
+          "alt": "baby in purple knit cap lying on white fur textile",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Emmalee Couturier",
+            "authorUrl": "https://unsplash.com/@emmcout?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/baby-in-purple-knit-cap-lying-on-white-fur-textile-oFx8LJcKO00?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/newborn-aarav/gallery-4.webp",
+          "width": 1400,
+          "height": 1051,
+          "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADwAwCdASoUAA8APwFqrU6rJiQiMAgBYCAJaQAAUTHPC4mvbzkVCw7AAPxaVNNToTXTTIUCvqD2U0Sv5UY8dEKv7+baPYahVuZcztuxY6X5Xw8xaUyVb4ORKoBgAAAA",
+          "alt": "baby in white shirt lying on bed",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Zoe Graham",
+            "authorUrl": "https://unsplash.com/@grahams_photography?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/baby-in-white-shirt-lying-on-bed-mjrif-KW5zw?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        }
+      ],
+      "video": {
+        "src": "/media/newborn-aarav/preview.mp4",
+        "poster": "/media/newborn-aarav/preview-poster.webp",
+        "width": 1280,
+        "height": 720,
+        "duration": 5,
+        "credit": {
+          "source": "Pixabay",
+          "author": "mycuppatea",
+          "authorUrl": "https://pixabay.com/users/55376546/",
+          "sourceUrl": "https://pixabay.com/videos/id-356998/",
+          "license": "Pixabay Content License"
+        }
+      }
+    },
+    "kiara-first-birthday": {
+      "cover": {
+        "src": "/media/kiara-first-birthday/cover.webp",
+        "width": 1920,
+        "height": 1408,
+        "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACQAwCdASoUAA8APwFqrE8rJiQiMAgBYCAJZwAAW/EEZt6tF+AAAP7tTgPTKl4EzSN5dmL65VPUhm6F8kqPjqQI2tjT0EwAAAA=",
+        "alt": "kid sitting beside round cake close-up photography",
+        "credit": {
+          "source": "Unsplash",
+          "author": "Henley Design Studio",
+          "authorUrl": "https://unsplash.com/@henleydesign?utm_source=nova_studio_template&utm_medium=referral",
+          "sourceUrl": "https://unsplash.com/photos/kid-sitting-beside-round-cake-close-up-photography-XbZgARqXROc?utm_source=nova_studio_template&utm_medium=referral",
+          "license": "Unsplash License"
+        }
+      },
+      "gallery": [
+        {
+          "src": "/media/kiara-first-birthday/gallery-1.webp",
+          "width": 1400,
+          "height": 933,
+          "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACQAwCdASoUAA0APwFqrE8rJiQiMAgBYCAJQBOgA4L9f0fcD8UAAP7TloKKOffBN/F8zLZQehiupcx6JCXSS6MkrzBrF9yLWq2dhDvpOkhDtPjZsRPLKfmkAAA=",
+          "alt": "round cake with white icing",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Veronica Torres",
+            "authorUrl": "https://unsplash.com/@verotogo?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/round-cake-with-white-icing-eBFTlsOKoT8?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/kiara-first-birthday/gallery-2.webp",
+          "width": 1400,
+          "height": 933,
+          "blurDataURL": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAQBACdASoUAA0APwFqrE8rJiQiMAgBYCAJbACdMoKPBbf4AlYtFRCFgAD+yKYweqUjQcWVxy54sS1hk5T5D+zgoLUbtPP/6e8dJkrejRQvw8cZcny32HJYjsIU8VE0L0NNsI8k4TYcb5G+BW+MFLVCYb8kXsOStz76Ekfk9+/y7vVdb0CZRRsLD9SrvEZwIdMopr+PifQAAA==",
+          "alt": "baby in white and black dress sitting on white and blue textile",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Regina Corbellini",
+            "authorUrl": "https://unsplash.com/@recorbellini?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/baby-in-white-and-black-dress-sitting-on-white-and-blue-textile-g1SG_NZYm7I?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/kiara-first-birthday/gallery-3.webp",
+          "width": 1400,
+          "height": 933,
+          "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAwCdASoUAA0APwFqrU8rJiQiMAgBYCAJYwCdAB5AQgM9KiyZLUgA/tbFL4f7d/LNtfFLkbhqSAkjyL6O/MwisdcGeIYQx064T+AA",
+          "alt": "white and gold cake with pink umbrella",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Nechama Lock",
+            "authorUrl": "https://unsplash.com/@nechamalock?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/white-and-gold-cake-with-pink-umbrella-1Wfe-zmHtGc?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        },
+        {
+          "src": "/media/kiara-first-birthday/gallery-4.webp",
+          "width": 1400,
+          "height": 930,
+          "blurDataURL": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADQAwCdASoUAA0APwFqrU8rJiQiMAgBYCAJbAAAP7ZX339znzfzPlAA/r8T/wJJrqF3XdWgtYYIL90269VNBTj0NGXRu3CULqetISAYa8Z90N9qosQGgabKhhjBWGQ5de/cBj5WkeJKh/hEb/+rsdMU/RCuKkk1WuA4zshcTP++sX8jvu+fb+va5VH9yHsO5AAAAA==",
+          "alt": "round cake with number 1 candle",
+          "credit": {
+            "source": "Unsplash",
+            "author": "Eilis Garvey",
+            "authorUrl": "https://unsplash.com/@eilisgarvey?utm_source=nova_studio_template&utm_medium=referral",
+            "sourceUrl": "https://unsplash.com/photos/round-cake-with-number-1-candle-cs2Zddny81w?utm_source=nova_studio_template&utm_medium=referral",
+            "license": "Unsplash License"
+          }
+        }
+      ],
+      "video": {
+        "src": "/media/kiara-first-birthday/preview.mp4",
+        "poster": "/media/kiara-first-birthday/preview-poster.webp",
+        "width": 1280,
+        "height": 720,
+        "duration": 11,
+        "credit": {
+          "source": "Pixabay",
+          "author": "nazharul",
+          "authorUrl": "https://pixabay.com/users/24144515/",
+          "sourceUrl": "https://pixabay.com/videos/id-109035/",
+          "license": "Pixabay Content License"
+        }
+      }
+    }
+  },
+  "team": [
+    {
+      "src": "/media/team/member-1.webp",
+      "width": 900,
+      "height": 1350,
+      "blurDataURL": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAACwBACdASoUAB4APwF0rVCrJyQisBgIAWAgCUAYZoHrSWJpwC17QV3XLBXrbYIcAP4Wavwp8aRn1sGtBdpCbU2MtgRGpCgFUyYbbdojHKWHTlhyw8+85qa9uHxEdFBc6aEq9J/pkFbmkJXkN8u4IPoOW2mBRVBtrnc27GF5GQc/z7oW2x5b/vAXbHWMwy4HUMpbtKeSAAAAAA==",
+      "alt": "man wearing white V-neck shirt",
+      "credit": {
+        "source": "Unsplash",
+        "author": "Joseph Gonzalez",
+        "authorUrl": "https://unsplash.com/@miracletwentyone?utm_source=nova_studio_template&utm_medium=referral",
+        "sourceUrl": "https://unsplash.com/photos/man-wearing-white-v-neck-shirt-iFgRcqHznqg?utm_source=nova_studio_template&utm_medium=referral",
+        "license": "Unsplash License"
+      }
+    },
+    {
+      "src": "/media/team/member-2.webp",
+      "width": 900,
+      "height": 1350,
+      "blurDataURL": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAACwBQCdASoUAB4APwFyr1KrJqQiqAqpYCAJZgC7MuI6ACGJrhbN4+4uinjG2C1K9Fx2ZuJT/gAA/oLP9/qokqpuVLjXiBKSTYRJFyC3TQmCk3I+9Gq0tfyekQOh636CltisPwNQWvCoUM5J2WECeV4KoiQ0RYQ1/S/ooIbUn7uyZY/EmS0hR+mw6D62CHnclV6oI31GzMctA94BODkOQnhUuH5cKNR6T4p/kXjAQQZpaiCu2vSx9FFJdqehgAAA",
+      "alt": "closeup photography of woman smiling",
+      "credit": {
+        "source": "Unsplash",
+        "author": "Michael Dam",
+        "authorUrl": "https://unsplash.com/@michaeldam?utm_source=nova_studio_template&utm_medium=referral",
+        "sourceUrl": "https://unsplash.com/photos/closeup-photography-of-woman-smiling-mEZ3PoFGs_k?utm_source=nova_studio_template&utm_medium=referral",
+        "license": "Unsplash License"
+      }
+    },
+    {
+      "src": "/media/team/member-3.webp",
+      "width": 900,
+      "height": 1132,
+      "blurDataURL": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACwBACdASoUABkAPwFyrlCrJyQ1MBgIAqAgCWUAzjgQvI5HGQNw+HwEZVZiv6QAAP7ehi832YVd8BYqCHIHM+3cGxc+8JL1xB/MnvX6rSjShK3eXdel8DN4NgnA38TPmUP7Vr1coJweFWPQANmmxatEcxPMW/49ctgtF+AA",
+      "alt": "woman in white crew neck shirt smiling",
+      "credit": {
+        "source": "Unsplash",
+        "author": "Jake Nackos",
+        "authorUrl": "https://unsplash.com/@jakenackos?utm_source=nova_studio_template&utm_medium=referral",
+        "sourceUrl": "https://unsplash.com/photos/woman-in-white-crew-neck-shirt-smiling-IF9TK5Uy-KI?utm_source=nova_studio_template&utm_medium=referral",
+        "license": "Unsplash License"
+      }
+    },
+    {
+      "src": "/media/team/member-4.webp",
+      "width": 900,
+      "height": 1349,
+      "blurDataURL": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAABQBQCdASoUAB4APwFwr1CrJiQisBgIAWAgCWQAnTNWDjSFLlxc+mvb3DC53cN0xfBZx0AA/tGOahMsbLF/xdqNUNUecbSCKymBJiGa9pOGosvMOlxNHRZpkGVg0XJrvKFnXBe4h1GLRHC4jNsw701aSh6Q2xTkLMNWArqVXtsS54NJ/vBNs/MoiiNtW3spWO+JyAG9qqoFexPwmhcvueXnibza/F2LsCBY7Is5qFMP6JNp/P5Y1jNcT5i/bhkG080GVtHhGFqAGbrOa3P6uIbc9rYeAAAA",
+      "alt": "a woman with long hair wearing a blue blazer",
+      "credit": {
+        "source": "Unsplash",
+        "author": "Troy Spoelma",
+        "authorUrl": "https://unsplash.com/@spoelee4?utm_source=nova_studio_template&utm_medium=referral",
+        "sourceUrl": "https://unsplash.com/photos/a-woman-with-long-hair-wearing-a-blue-blazer-EV8PPQG6zxY?utm_source=nova_studio_template&utm_medium=referral",
+        "license": "Unsplash License"
+      }
+    },
+    {
+      "src": "/media/team/member-5.webp",
+      "width": 900,
+      "height": 1350,
+      "blurDataURL": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAACQBQCdASoUAB4APwFurk8rJqQiMAgBYCAJQBkahH249WvlQXYosY3ze91fJxcSvB65YzpzcAD+sUxQh7YRIR+sSHEvRD0vZYY5FlEPbN0kzHSCnYYlWPJ2/wjCoujErGSeweOU2ZpT/+8lDVNDhgVmnEL1+NeyW2AHvag3IhA9K5MEVMCi5SPJVQ+aBc2OX8nX1I10AAA=",
+      "alt": "woman in gray and black scarf",
+      "credit": {
+        "source": "Unsplash",
+        "author": "Andre Styles",
+        "authorUrl": "https://unsplash.com/@lovedisorder?utm_source=nova_studio_template&utm_medium=referral",
+        "sourceUrl": "https://unsplash.com/photos/woman-in-gray-and-black-scarf-pq9npYMirk8?utm_source=nova_studio_template&utm_medium=referral",
+        "license": "Unsplash License"
+      }
+    },
+    {
+      "src": "/media/team/member-6.webp",
+      "width": 900,
+      "height": 1200,
+      "blurDataURL": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAABwBQCdASoUABsAPwFysVIrJqSiqAqpYCAJQBe6ZhEaFz2zhKtUn084Y013d28Cl6K6Z98AAP7Tm+6HmriI22Q3xLOJdwD/rAe0/ixkIduoXqY9PJgORARb5qT/pbm7rwqwAhHzNYocKqMzHhfWZMSt2fPzT3JY4vsdbpVD2zqghlb3USvjLuZCGnouKpjQNKND3UYJ9yC/9tNMxQUbe5yjjUuE6IeM5rFsGE5HVVdTZV1qkSqsawO/Pfm0AAAA",
+      "alt": "woman in black leather jacket",
+      "credit": {
+        "source": "Unsplash",
+        "author": "Zoran Borojevic",
+        "authorUrl": "https://unsplash.com/@fresh_studio?utm_source=nova_studio_template&utm_medium=referral",
+        "sourceUrl": "https://unsplash.com/photos/woman-in-black-leather-jacket-4BG2yKyCaWg?utm_source=nova_studio_template&utm_medium=referral",
+        "license": "Unsplash License"
+      }
+    }
+  ]
+}
