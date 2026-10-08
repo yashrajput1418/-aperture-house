@@ -32,6 +32,9 @@ export default function Footer() {
               <li>
                 <Link href="/credits" className="text-white/80 hover:text-accent">Media credits</Link>
               </li>
+              <li>
+                <Link href="/docs" className="text-white/80 hover:text-accent">Setup docs</Link>
+              </li>
             </ul>
           </div>
 

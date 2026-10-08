@@ -25,6 +25,7 @@ export default function Footer() {
             <a key={s.label} href={s.href} className="text-white/70 hover:text-accent">{s.label}</a>
           ))}
           <Link href="/credits" className="text-white/70 hover:text-accent">Media credits</Link>
+          <Link href="/docs" className="text-white/70 hover:text-accent">Setup docs</Link>
         </div>
 
         <div className="mt-10 flex justify-center">

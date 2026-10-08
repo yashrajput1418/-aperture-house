@@ -20,6 +20,7 @@ export default function Footer() {
             <a key={s.label} href={s.href} className="text-muted hover:text-accent">{s.label}</a>
           ))}
           <Link href="/credits" className="text-muted hover:text-accent">Credits</Link>
+          <Link href="/docs" className="text-muted hover:text-accent">Docs</Link>
           <a href="#top" className="text-muted hover:text-accent">Top ↑</a>
           <VersionSwitcher current={4} tone="bare" />
         </div>

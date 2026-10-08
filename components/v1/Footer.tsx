@@ -24,6 +24,7 @@ export default function Footer() {
                 <a key={s.label} href={s.href} className="text-sm text-muted transition hover:text-accent">{s.label}</a>
               ))}
               <Link href="/credits" className="text-sm text-muted transition hover:text-accent">Media credits</Link>
+              <Link href="/docs" className="text-sm text-muted transition hover:text-accent">Setup docs</Link>
             </div>
           </div>
         </div>

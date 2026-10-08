@@ -1,13 +1,7 @@
-import type { Metadata } from 'next';
-import Home from '@/components/v2/Home';
-import { site } from '@/content/site';
-import { versionMeta } from '@/lib/version';
+import { HomeRoute, homeMetadata } from '@/components/layouts/HomeRoute';
 
-export const metadata: Metadata = {
-  title: `${site.name} — ${versionMeta[2].label}: ${versionMeta[2].name}`,
-  description: site.description,
-};
+export const metadata = homeMetadata(2);
 
 export default function Page() {
-  return <Home />;
+  return <HomeRoute version={2} />;
 }

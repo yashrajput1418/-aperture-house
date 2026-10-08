@@ -206,6 +206,20 @@ So a fresh clone looks intentional rather than broken, and a missing file in pro
 degrades to the studio mark instead of a torn-image icon. Covered: shoot cards, case-study
 covers, galleries and the lightbox, team portraits, hero collage tiles and video posters.
 
+## Setup documentation in the browser
+
+The template ships its own docs page at **`/docs`** — install, renaming, editing every
+piece of content, all three media routes (your own files, free stock with API keys, or a
+hand-written manifest), deployment and troubleshooting. Delete `app/docs/` before handing
+the site to a client.
+
+Two media commands:
+
+```bash
+npm run scan:media    # build content/media.json from YOUR files in public/media — no keys
+npm run fetch:media   # download free-licensed stock (needs UNSPLASH_ACCESS_KEY / PIXABAY_API_KEY)
+```
+
 ## 6. Four versions & the brand playground
 
 ### A version is a whole site, not a theme
@@ -223,6 +237,24 @@ rendered. The dropdown in the header (and in every footer) switches between them
 | `/home-2` | 2 — Editorial | Masthead, type-only hero, every section a ruled list or grid | Printed-essay measure interrupted by edge-to-edge frames, facts as a colophon |
 | `/home-3` | 3 — Cinematic | Showreel hero, a full-height panel per shoot, horizontal strips, booking over footage | **Filmstrip** — frames scroll vertically while a pinned caption column swaps with them |
 | `/home-4` | 4 — Archive | No hero: pinned index rail and a filterable masonry archive in one hairline grid | Pinned record column, every frame streaming past it |
+
+### Shipping fewer than four — one line, no deleting
+
+`site.versions` in `content/site.ts` decides what exists:
+
+```ts
+versions: {
+  enabled: [1, 2, 3, 4],   // a version left out 404s and leaves the dropdown
+  default: 1,              // this one owns "/"; its own /home-N redirects there
+  switcher: true,          // hides itself anyway when only one is enabled
+},
+
+versions: { enabled: [2], default: 2, switcher: true }   // Editorial only
+```
+
+With one version enabled the site behaves as an ordinary single-layout site: `/` is that
+layout, `/work/<slug>` is its case study, no dropdown, no stray URLs. Deleting the unused
+`components/vN/` folders afterwards is optional cleanup, not a requirement.
 
 Case studies stay inside the version you are browsing: links from Home 3 point at
 `/work/<slug>?v=3`, and the bare `/work/<slug>` is version 1. `lib/version.ts` owns that

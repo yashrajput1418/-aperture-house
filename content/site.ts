@@ -97,6 +97,30 @@ export const site = {
   },
 
   /**
+   * Which of the four site versions ship, and which one owns `/`.
+   *
+   * This is the switch to use instead of deleting folders: a version that
+   * is not listed in `enabled` stops being reachable — its /home-N route
+   * 404s, ?v=N on a case study falls back to the default, and it leaves
+   * the layout dropdown. The files stay in the repository, so you can
+   * turn it back on by editing one line.
+   *
+   *   enabled: [2]          // ship Editorial only; `/` is the whole site
+   *   enabled: [1, 3]       // two versions, visitors can switch
+   *   default: 3            // Cinematic owns `/`; /home-3 redirects there
+   *   switcher: false       // keep all four live but hide the dropdown
+   *
+   * `default` must be one of `enabled`; if it is not, the first enabled
+   * version is used. See lib/version.ts.
+   */
+  versions: {
+    enabled: [1, 2, 3, 4] as (1 | 2 | 3 | 4)[],
+    default: 1 as 1 | 2 | 3 | 4,
+    /** Show the "Layout" dropdown in the header and footers. */
+    switcher: true,
+  },
+
+  /**
    * Demo-only brand playground: a floating settings panel that lets a
    * visitor try their own studio name, logo and colours. (Layouts are not
    * in here — each of the four versions is its own URL, switched from the

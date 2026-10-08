@@ -1,6 +1,11 @@
-import Home from '@/components/v1/Home';
+import { defaultVersion } from '@/lib/version';
+import { homeFor } from '@/components/layouts/versionHomes';
 
-/** Version 1 owns `/` — see lib/version.ts for the other three. */
-export default function Page() {
+/**
+ * `/` renders whichever version `site.versions.default` points at — see
+ * lib/version.ts. Nothing needs deleting to ship a single layout.
+ */
+export default async function Page() {
+  const { default: Home } = await homeFor[defaultVersion]();
   return <Home />;
 }

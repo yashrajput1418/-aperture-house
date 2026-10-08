@@ -2,12 +2,16 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { VERSIONS, homeHref, versionMeta, type Version } from '@/lib/version';
+import { enabledVersions, homeHref, showSwitcher, versionMeta, type Version } from '@/lib/version';
 
 /**
  * Switches between the four site versions. Every entry is a real link to
  * that version's home page, so the choice is shareable and the browser
  * back button works.
+ *
+ * It lists only the versions `site.versions.enabled` names, and renders
+ * nothing at all when there is one version live or the dropdown is
+ * switched off — so a single-layout site needs no edits to its navbars.
  *
  * `tone` only changes the trigger's chrome — each version's navbar has a
  * different ground to sit on.
@@ -25,6 +29,7 @@ export default function VersionSwitcher({
 }) {
   const [open, setOpen] = useState(false);
   const wrap = useRef<HTMLDivElement>(null);
+  const versions = enabledVersions;
 
   useEffect(() => {
     if (!open) return;
@@ -41,6 +46,8 @@ export default function VersionSwitcher({
       document.removeEventListener('keydown', onKey);
     };
   }, [open]);
+
+  if (!showSwitcher) return null;
 
   const trigger =
     tone === 'pill'
@@ -75,7 +82,7 @@ export default function VersionSwitcher({
           align === 'right' ? 'right-0' : 'left-0'
         } ${open ? '' : 'pointer-events-none'}`}
       >
-        {VERSIONS.map((v) => {
+        {versions.map((v) => {
           const m = versionMeta[v];
           const active = v === current;
           return (
